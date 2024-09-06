@@ -14,6 +14,7 @@ module.exports = {
       },
       fontFamily: {
         'squada': ['"Squada One"', 'sans-serif'],
+        'inter': ['"Inter"', 'sans-serif'],
       },
     },
   },

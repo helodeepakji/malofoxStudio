@@ -31,3 +31,7 @@ p {
   /* Adjust clip-path to match the shape of the Vector image */
   clip-path: url(#clip-shape);
 }
+
+.shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 4px 20px rgba(0, 0, 0, 0.08);
+}
