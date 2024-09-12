@@ -29,13 +29,37 @@
         </a>
       </div>
 
+      <!-- Mobile Menu Button (Hamburger) -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <svg
+            class="w-8 h-8"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+
       <!-- Navigation -->
-      <nav>
-        <ul class="flex space-x-8 text-lg font-medium text-white">
+      <nav class="hidden md:block">
+        <ul id="menu" class="md:flex space-x-8 text-lg font-medium text-white">
           <li><a href="index.html" class="hover:text-custom-pink">HOME</a></li>
-          <li><a href="services.html" class="hover:text-custom-pink">SERVICES</a></li>
-          <li><a href="tech.html" class="hover:text-custom-pink">TECH</a></li>
-          <li><a href="about-us.html" class="hover:text-custom-pink">ABOUT</a></li>
+          <li>
+            <a href="services.html" class="hover:text-custom-pink">SERVICES</a>
+          </li>
+          <li><a href="#" class="hover:text-custom-pink">TECH</a></li>
+          <li>
+            <a href="about-us.html" class="hover:text-custom-pink">ABOUT</a>
+          </li>
           <li>
             <a href="contact.html" class="hover:text-custom-pink">CONTACT</a>
           </li>
@@ -43,36 +67,72 @@
       </nav>
     </header>
 
+    <!-- Mobile Menu -->
+    <nav
+      id="mobile-menu"
+      class="z-50 hidden fixed inset-0 text-center bg-black bg-opacity-90 text-white p-6 flex-col space-y-10"
+    >
+      <!-- Close Button -->
+      <button
+        id="close-menu"
+        class="absolute top-0 right-0 p-6 text-white text-4xl focus:outline-none"
+      >
+        &times;
+      </button>
+
+      <div class="flex flex-col items-center justify-center mt-20">
+        <ul class="text-lg font-medium space-y-4">
+          <li>
+            <a href="index.html" class="hover:text-custom-pink block">HOME</a>
+          </li>
+          <li>
+            <a href="services.html" class="hover:text-custom-pink block"
+              >SERVICES</a
+            >
+          </li>
+          <li><a href="#" class="hover:text-custom-pink block">TECH</a></li>
+          <li>
+            <a href="about-us.html" class="hover:text-custom-pink block"
+              >ABOUT</a
+            >
+          </li>
+          <li>
+            <a href="contact.html" class="hover:text-custom-pink block"
+              >CONTACT</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
     <!-- Main Content -->
     <main>
       <!-- Form Section -->
       <section
-        class="relative flex justify-center items-center min-h-screen bg-black overflow-hidden"
+        class="relative flex justify-center items-center min-h-screen bg-black overflow-hidden p-4 lg:pd-0"
       >
         <!-- Left Background Image -->
         <img
           src="images/right-woman.png"
           alt="Left Man"
-          class="absolute left-0 bottom-0 max-w-sm h-auto"
+          class="hidden lg:block absolute left-0 bottom-0 max-w-sm h-auto"
         />
         <!-- Right Background Image -->
         <img
           src="images/left-man.png"
           alt="Right Woman"
-          class="absolute right-0 bottom-0 max-w-sm h-4/5"
+          class="hidden lg:block absolute right-0 bottom-0 max-w-sm h-4/5"
         />
 
         <!-- Form Container -->
         <div
           style="transform: translateY(5%)"
-          class="relative bg-[#D9D9D9] p-16 pb-8 rounded-2xl shadow-md w-full max-w-4xl z-10"
+          class="relative bg-[#D9D9D9] mt-16 lg:mt-0 p-4 pt-32 md:p-16 pb-8 rounded-2xl shadow-md w-full max-w-4xl z-10"
         >
           <!-- Top Left Image -->
           <img
             src="images/contact-us.png"
             alt="Logo"
-            style="top: -8%; left: -2%"
-            class="absolute w-48 h-48 object-cover rounded-full"
+            class="hidden md:block absolute top-0 left-0 lg:-top-8 lg:-left-4 h-24 w-24 lg:w-48 lg:h-48 object-cover rounded-full"
           />
 
           <!-- Top Right Contact Details -->
@@ -98,8 +158,10 @@
           </div>
 
           <!-- Form Content -->
-          <div class="px-16">
-            <h2 class="text-5xl text-left font-bold text-black mb-4">
+          <div class="px-0 lg:px-16">
+            <h2
+              class="text-5xl text-left font-bold text-black mb-4 mt-8 lg:mt-0"
+            >
               Get In Touch
             </h2>
             <p class="text-left text-black font-semibold mb-6">
@@ -158,9 +220,9 @@
       </section>
 
       <!-- section icons -->
-      <section class="bg-black">
+      <section class="bg-black overflow-hidden">
         <div
-          class="container mx-auto flex justify-between pt-14 items-center space-x-4"
+          class="container mx-auto flex justify-between pt-14 md:pt-32 items-center space-x-4"
         >
           <!-- Image 1 -->
           <img
@@ -203,11 +265,10 @@
 
       <!-- New Section -->
       <section class="bg-black text-white py-16 px-4 text-center">
-        <!-- Heading -->
-        <h2 class="text-[100px] font-bold">
+        <h2 class="text-5xl md:text-[100px] font-bold">
           Crafting <span class="text-custom-pink">Dreams,</span>
         </h2>
-        <h2 class="text-[100px] font-bold mb-6">
+        <h2 class="text-5xl md:text-[100px] font-bold mb-6">
           <span class="text-custom-pink">One</span> Pixel
           <span class="text-custom-pink">at a</span> Time
         </h2>
@@ -215,14 +276,12 @@
         <div
           class="flex flex-col lg:flex-row mb-10 items-center justify-center lg:justify-between max-w-5xl mx-auto"
         >
-          <!-- Image on the right -->
           <img
             src="images/freefire.png"
             alt="Adventure Image"
-            class="w-full lg:w-1/5 md:w-1/4 sm:w-1/3 p-4 lg:ml-10"
+            class="w-1/2 lg:w-1/5 md:w-1/4 p-4 lg:ml-10"
           />
 
-          <!-- Text on the left -->
           <div class="w-full lg:w-2/3 text-lg text-left">
             <h2 class="text-5xl mb-4">Free Fire</h2>
             <p>
@@ -235,18 +294,15 @@
           </div>
         </div>
 
-        <!-- Next row with image and text switched -->
         <div
           class="flex flex-col lg:flex-row-reverse items-center justify-center lg:justify-between max-w-5xl mx-auto mb-12"
         >
-          <!-- Image on the right -->
           <img
             src="images/battlegrounds.png"
             alt="Adventure Image"
-            class="w-full lg:w-2/5 md:w-1/4 sm:w-1/3 p-4"
+            class="w-full lg:w-2/5 md:w-1/4 p-4"
           />
 
-          <!-- Text on the left -->
           <div class="w-full text-left text-lg">
             <h2 class="text-5xl mb-4">BattleGround</h2>
             <p>
@@ -260,11 +316,10 @@
         </div>
       </section>
 
-      <section class="relative bg-black py-16 pr-8">
+      <section class="relative bg-black lg:py-16 p-8 lg:pr-8 mx-auto">
         <div
           class="max-w-5xl mx-auto flex flex-col lg:flex-row items-center mb-10"
         >
-          <!-- Image on the left -->
           <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
             <img
               src="images/joystick-pink.png"
@@ -274,7 +329,7 @@
           </div>
 
           <div
-            class="w-full lg:w-1/2 flex flex-col justify-center text-white lg:pl-12"
+            class="text-center md:text-left w-full lg:w-1/2 flex flex-col justify-center text-white lg:pl-12"
           >
             <h2 class="text-md font-light mb-4">Stay up to date</h2>
             <p class="mb-6 text-3xl">
@@ -304,58 +359,10 @@
           style="transform: translateY(80%)"
         />
       </section>
-
-      <section
-        class="relative bg-black w-full flex items-center justify-center overflow-hidden"
-      >
-        <div class="absolute inset-0 bg-[#0B2226] clip-triangle"></div>
-
-        <div
-          class="relative w-full mx-auto flex items-end justify-between text-white py-5"
-        >
-          <div class="w-full lg:w-1/3 mb-8 lg:mb-0 flex justify-center">
-            <img
-              src="images/left-man.png"
-              alt="Left Image"
-              class="w-full max-w-sm h-auto object-cover"
-            />
-          </div>
-
-          <div class="flex-1 text-left self-start p-4 lg:p-8 lg:py-12">
-            <h2 class="text-4xl lg:text-6xl font-bold mb-2 font-squada">
-              Our Games
-            </h2>
-            <p
-              class="text-lg lg:text-xl leading-relaxed mb-8 max-w-md font-squada font-normal mx-auto"
-            >
-              At Mellow Fox Studios, every game we create is a journey into the
-              extraordinary. From epic fantasy worlds to futuristic cities, our
-              games are designed to captivate, challenge, and inspire. We
-              believe in pushing the boundaries of what's possible, blending
-              breathtaking visuals with innovative gameplay mechanics.
-            </p>
-            <div class="mx-auto max-w-2xl">
-              <img
-                src="images/mobile.gif"
-                alt="Bottom Image"
-                class="w-full h-auto object-cover"
-              />
-            </div>
-          </div>
-
-          <div class="w-full lg:w-1/3 flex justify-center">
-            <img
-              src="images/right-woman.png"
-              alt="Right Image"
-              class="w-full max-w-sm h-auto object-cover"
-            />
-          </div>
-        </div>
-      </section>
     </main>
 
     <!-- Footer Section -->
-    <footer class="relative bg-black text-white py-20">
+    <footer class="relative bg-black text-white p-16">
       <div class="absolute inset-0">
         <img
           src="images/mountain.png"
@@ -363,6 +370,7 @@
           class="w-full h-full object-cover mix-blend-luminosity opacity-70"
         />
       </div>
+
       <div class="absolute inset-0">
         <img
           src="images/buildings.png"
@@ -372,7 +380,6 @@
       </div>
 
       <div class="relative max-w-7xl mx-auto mt-10 px-4 lg:px-8 z-10">
-        <!-- Footer Columns -->
         <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           <!-- Column 1: Product -->
           <div>
@@ -446,7 +453,7 @@
 
         <!-- Social Media Card -->
         <div
-          class="flex flex-col justify-center mx-auto w-1/3 items-center my-20 bg-white bg-opacity-80 rounded-xl"
+          class="flex flex-col justify-center mx-auto w-full lg:w-2/5 items-center my-20 bg-white bg-opacity-80 rounded-xl"
         >
           <div class="p-4">
             <h3 class="text-black text-2xl font-semibold mb-4 text-center">
@@ -461,19 +468,47 @@
             </div>
           </div>
         </div>
-
         <!-- Bottom Row -->
-        <div class="flex justify-between items-center">
-          <span class="text-sm">&copy; 2024 All rights reserved.</span>
-          <div class="flex space-x-4">
-            <a href="#" class="hover:text-gray-300 text-sm">Privacy Policy</a>
-            <a href="#" class="hover:text-gray-300 text-sm">Terms of Service</a>
-            <a href="#" class="hover:text-gray-300 text-sm">Cookie Policy</a>
-            <a href="#" class="hover:text-gray-300 text-sm">Disclaimer</a>
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <span class="text-sm mb-8 md:mb-0"
+            >&copy; 2024 All rights reserved.</span
+          >
+          <div
+            class="flex flex-col md:flex-row justify-center items-center md:space-x-4"
+          >
+            <a href="#" class="hover:text-gray-300 text-sm mb-4 md:mb-0"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-gray-300 text-sm mb-4 md:mb-0"
+              >Terms of Service</a
+            >
+            <a href="#" class="hover:text-gray-300 text-sm mb-4 md:mb-0"
+              >Cookie Policy</a
+            >
+            <a href="#" class="hover:text-gray-300 text-sm mb-4 md:mb-0"
+              >Disclaimer</a
+            >
             <a href="#" class="hover:text-gray-300 text-sm">Help Center</a>
           </div>
         </div>
       </div>
     </footer>
+
+    <script>
+      const menuToggle = document.getElementById('menu-toggle')
+      const menu = document.getElementById('menu')
+      const mobileMenu = document.getElementById('mobile-menu')
+
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden')
+      })
+
+      // Close menu functionality
+      document
+        .getElementById('close-menu')
+        .addEventListener('click', function () {
+          document.getElementById('mobile-menu').classList.add('hidden')
+        })
+    </script>
   </body>
 </html>
